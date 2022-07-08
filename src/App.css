@@ -1,0 +1,37 @@
+/* NavBar Start!! */
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  font-size: 20px;
+}
+.login-button .login-text {
+  margin-left: 5px;
+}
+
+.nav-logo,
+.menu-area {
+  display: flex;
+  justify-content: center;
+}
+.menu-list {
+  display: flex;
+  list-style-type: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.menu-list li {
+  padding: 10px;
+}
+.search-box {
+  border-bottom: 1px solid #000;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+}
+.search-box input {
+  border: none;
+  margin-left: 5px;
+}
+
+/* NavBar End! */
