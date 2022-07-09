@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const menuList = [
@@ -18,15 +19,19 @@ const Navbar = () => {
     <div>
       <div>
         <div className="login-button">
-          <FontAwesomeIcon icon={faUser} />
-          <div className="login-text">Login</div>
+          <FontAwesomeIcon size="lg" icon={faUser} />
+          <div className="login-text">
+            <Link to="/login">로그인</Link>
+          </div>
         </div>
       </div>
       <div className="nav-logo">
-        <img
-          width={200}
-          src="https://3dwarehouse.sketchup.com/warehouse/v1.0/publiccontent/3e17273b-330d-4466-b158-d302aaa27d43"
-        />
+        <Link to="/">
+          <img
+            width={200}
+            src="https://3dwarehouse.sketchup.com/warehouse/v1.0/publiccontent/3e17273b-330d-4466-b158-d302aaa27d43"
+          />
+        </Link>
       </div>
       <div className="menu-area">
         <ul className="menu-list">

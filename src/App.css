@@ -33,5 +33,53 @@
   border: none;
   margin-left: 5px;
 }
+.login-text a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
 
-/* NavBar End! */
+/* Product Card */
+.product-card {
+  border: none;
+  margin: 10px;
+}
+.product-card img {
+  width: 310px;
+  height: auto;
+}
+.product-card:hover {
+  transform: scale(1.1); /* 크기를 키우는 함수 */
+  z-index: 1;
+}
+
+/* Login */
+.login-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.form-label {
+  display: flex;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.login-form input {
+  width: 600px;
+  height: 45px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.login-form input:focus {
+  border: none;
+  outline: 2px solid red;
+}
+.login-btn {
+  width: 80px;
+  height: 50px;
+  color: white;
+  background-color: red;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+}
