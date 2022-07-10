@@ -1,9 +1,19 @@
 import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setAuth }) => {
+  const navigate = useNavigate();
+  const loginUser = (e) => {
+    e.preventDefault(); // submit의 refresh를 막는다.
+    console.log("login user function error");
+    setAuth(true);
+    navigate("/");
+  };
+
   return (
     <div className="login-area container">
-      <form className="login-form">
+      <form className="login-form" onSubmit={(e) => loginUser(e)}>
         <div className="mb-3">
           <label className="form-label">이메일</label>
           <input type="email" placeholder="email" />

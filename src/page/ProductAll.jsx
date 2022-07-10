@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import ProductCard from "../component/ProductCard";
 
 const ProductAll = () => {
@@ -13,7 +14,6 @@ const ProductAll = () => {
     let data = await res.json();
     setProductList(data);
   };
-
   useEffect(() => {
     getProducts();
   }, []);
