@@ -5,19 +5,16 @@ import { useEffect, useState } from "react";
 
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
-import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar";
 import PrivateRoute from "./rout/PrivateRoute";
 
 function App() {
   const [auth, setAuth] = useState(false);
 
-  useEffect(() => {
-    console.log("auth", auth);
-  }, [auth]);
+  useEffect(() => {}, [auth]);
   return (
     <div>
-      <Navbar />
+      <Navbar auth={auth} setAuth={setAuth} />
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route path="/login" element={<Login setAuth={setAuth} />} />
