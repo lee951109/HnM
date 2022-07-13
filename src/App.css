@@ -53,6 +53,9 @@
     display: none;
   }
 }
+.burger-menu {
+  padding-left: 15px;
+}
 .side-menu {
   height: 100%;
   width: 250px;
@@ -140,4 +143,30 @@
 .product-img {
   display: flex;
   justify-content: flex-end;
+}
+.product-info {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 20px;
+}
+.product-info div {
+  margin-bottom: 10px;
+}
+.product-select {
+  display: flex;
+  width: 90px;
+  padding: 5px 20px;
+  height: 35px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  outline: 0 none;
+}
+.add-btn {
+  width: 250px;
+  background: #222;
+  padding: 13px 25px;
+  min-height: 48px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #fff;
 }

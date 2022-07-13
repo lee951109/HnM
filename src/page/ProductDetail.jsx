@@ -14,12 +14,18 @@ import { useParams } from "react-router-dom";
 const ProductDetail = () => {
   let { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [selected, setSelected] = useState("사이즈 선택");
 
   const getProductDetail = async () => {
     let url = `https://my-json-server.typicode.com/lee951109/HnM/products/${id}`;
+    // let url = `http://localhost:5000/products/${id}`;
     let res = await fetch(url);
     let data = await res.json();
     setProduct(data);
+  };
+
+  const handleSelect = (e) => {
+    setSelected(e.target.value);
   };
 
   useEffect(() => {
@@ -31,18 +37,23 @@ const ProductDetail = () => {
         <Col className="product-img">
           <img src={product?.img} />
         </Col>
-        <Col>
+        <Col className="product-info">
           <div>{product?.title}</div>
           <div>{product?.price}</div>
           <div>{product?.choice == true ? "Conscious choice" : ""}</div>
-          <DropdownButton id="dropdown-basic-button" title="사이즈 선택">
+          <select
+            className="product-select"
+            onChange={handleSelect}
+            value={selected}
+          >
             {product?.size.map((item, index) => (
-              <Dropdown.Item href="#" key={index}>
+              <option value={item} key={index}>
                 {item}
-              </Dropdown.Item>
+              </option>
             ))}
-          </DropdownButton>
-          <Button variant="outline-secondary">담기</Button>
+          </select>
+
+          <button className="add-btn">담기</button>
         </Col>
       </Row>
     </Container>
