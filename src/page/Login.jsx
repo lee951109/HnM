@@ -1,12 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { authAction } from "../redux/actions/authAction";
 
 const Login = ({ setAuth }) => {
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const loginUser = (e) => {
     e.preventDefault(); // submit의 refresh를 막는다.
-    console.log("login user function error");
+    dispatch(authAction.login(id, password));
     setAuth(true);
     navigate("/");
   };
@@ -16,11 +22,19 @@ const Login = ({ setAuth }) => {
       <form className="login-form" onSubmit={(e) => loginUser(e)}>
         <div className="mb-3">
           <label className="form-label">이메일</label>
-          <input type="email" placeholder="email" />
+          <input
+            type="email"
+            placeholder="email"
+            onChange={(e) => setId(e.target.value)}
+          />
         </div>
         <div>
           <label className="form-label">비밀번호</label>
-          <input type="password" placeholder="비밀번호" />
+          <input
+            type="password"
+            placeholder="비밀번호"
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
 
         <button type="submit" className="login-btn">
