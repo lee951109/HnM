@@ -24,3 +24,17 @@
 > 리덕스에서 미들웨어는 주로 비동기 작업을 처리 할 때 사용한다.<br>
 > 리듀서에서 발생한 예외를 서버로 전송하는 등의 목적으로 미들웨어를 사용 할 수 있다.<br>
 > 미들웨어는 리듀서가 액션을 처리하기 전에 실행되는 함수로 액션과 리듀서 사이의 중간자라고 볼 수 있다.
+
+<br/><br/>
+
+## 📌 Redux DevTools
+
+> 변경되는 state 값을 실시간으로 확인 할 수 있게 도와주는 툴!
+
+- 설치
+
+  - `❯ npm i --save redux-devtools-extension`
+
+- 사용법
+  - store.js에 `(applyMiddleware(thunk))` 이 부분을 `composeWithDevTools`로 감싸주면 끝.
+  - 관리자 모드에서 state 가 변경 되는 것을 확인 할 수 있다.
