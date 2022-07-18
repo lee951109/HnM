@@ -9,4 +9,15 @@ function getProducts(searchQuery) {
   };
 }
 
-export const productAction = { getProducts };
+function getProductDetail(id) {
+  return async (dispatch, getState) => {
+    let url = `https://my-json-server.typicode.com/lee951109/HnM/products/${id}`;
+    // let url = `http://localhost:5000/products/${id}`;
+    let res = await fetch(url);
+    let data = await res.json();
+
+    dispatch({ type: "GET_PRODUCT_DETAIL", payload: { data } });
+  };
+}
+
+export const productAction = { getProducts, getProductDetail };

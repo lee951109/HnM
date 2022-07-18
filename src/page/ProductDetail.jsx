@@ -1,27 +1,19 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  Dropdown,
-  DropdownButton,
-  Row,
-} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { productAction } from "../redux/actions/productAction";
 
 const ProductDetail = () => {
   let { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const product = useSelector((state) => state.product.product);
   const [selected, setSelected] = useState("사이즈 선택");
+  let dispatch = useDispatch();
 
-  const getProductDetail = async () => {
-    let url = `https://my-json-server.typicode.com/lee951109/HnM/products/${id}`;
-    // let url = `http://localhost:5000/products/${id}`;
-    let res = await fetch(url);
-    let data = await res.json();
-    setProduct(data);
+  const getProductDetail = () => {
+    dispatch(productAction.getProductDetail(id));
   };
 
   const handleSelect = (e) => {
