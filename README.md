@@ -2,6 +2,8 @@
 
 > 리액트 & json-server를 공부하면서 만들어본 H&M !!
 
+[H&M DEMO!!](https://copyhandm.netlify.app/)
+
 ## 📌 Json-server
 
 - 설치 <br/>
